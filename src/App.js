@@ -69,8 +69,8 @@ function App() {
   console.log("LISTS STATE", lists);
 
   return <React.Fragment>
-      <div className="flex flex-col p-0 m-0 h-screen">
-        <div className="order-last fixed bottom-0 w-screen">
+      <div className="flex flex-col p-0 m-0 h-full">
+        <div className="order-last w-screen">
           <NewHeader />
         </div>
           

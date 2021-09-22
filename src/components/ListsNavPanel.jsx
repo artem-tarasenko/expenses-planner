@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-export default function ListsNavPanel() {
+export default function ListsNavPanel({next, prev}) {
 
     return <React.Fragment>
         <div className="my-4 flex justify-between">
-            <button>PREV</button>
+            <button onClick={prev}>PREV</button>
             <p>Nav panel</p>
-            <button>NEXT</button>
+            <button onClick={next}>NEXT</button>
         </div>
     </React.Fragment>
 }

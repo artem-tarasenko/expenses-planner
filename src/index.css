@@ -2,16 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+
+  html, body, #root {
+    @apply h-full; 
+    @apply overflow-hidden;
+  }
+
+  body {
+  margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  .slick-slider .slick-dots li {
+    display: none !important;
+  }
+
+  .slick-slider .slick-dots li.slick-active {
+    display: inline-block !important;
+  }
+
+  .slick-slider .slick-dots li button:before {
+    content: none;
+  }
+
+  .slick-slider .slick-dots li.slick-active  {
+    font-size: 14px;
+    color: black;
+  }
+
+  .slick-slider .slick-dots li, .slick-slider .slick-dots li p {
+    width: 50px;
+  }
+
+}
