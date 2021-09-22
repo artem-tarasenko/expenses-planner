@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #fff;
+}
+
+p, input {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-wrapper {
+    margin: 30px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 700px;
+    /* border: 1px solid black; */
+    background-color: #ececec;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px 10px 20px;
+    text-transform: uppercase;
+    color: rgb(65, 64, 71);
+    display: flex;
+    flex-direction: column;
+    background-color: #7e9097;
+    box-shadow: 0px 1px 7px rgb(0 0 0 / 77%);
+}
+
+.heading h1 {
+    padding: 0;
+    margin: auto 0;
+}
+
+.heading-title {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #c4c4c4;
+    color: #e1e1e1;
+}
+
+button.heading-button svg {
+    color: #e3e3e3;
+}
+
+.heading-totals {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 10px 0;
+    background-color: #7e9097;
+    color: #d5d5d5;
+    align-items: center;
+}
+
+p.totals {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+p.totals.budget {
+    color: #389209;
+    
+}
+
+p.totals.sum-result {
+    color: #328592;
+    
+    font-weight: 600;
+}
+
+p.totals.sum-result.excel {
+    color: #f0b0b0;
+}
+
+.heading-totals p {
+    margin: 0 20px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    /* justify-content: flex-start; */
+}
+
+.wrapper {
+    justify-content: space-around;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.add-btn-group {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.section {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.section.first {
+
+}
+
+.section h2 {
+  margin: 10px 0 30px 20px;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #6e6f6f;
+}
+
+
+
+.col {
+    padding: 0 20px;
+    width: 100%;
+}
+
+.col-headers {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 1.5rem;
+}
+
+.col-headers p {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+p.header-title {
+    flex-grow: 1;
+}
+
+p.currency-button {
+    margin-left: 20px;
+}
+
+
+
+.col:first-of-type {
+    /* border-right: 1px solid black; */
+}
+
+.col-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.col-item p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 51px;
+}
+
+.col-item p.crossed {
+    text-decoration: line-through;
+}
+
+p.item-field-1 {
+    min-width: 150px;
+}
+
+p.item-field-2 {
+    min-width: 50px;
+}
+
+.money {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+}
+
+input[type="button"] {
+    margin: 0 10px;
+}
+
+.item-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-direction: row-reverse;
+}
+
+.item-buttons label {
+    margin: 0;
+}
+
+.item-buttons button {
+    /* padding: 9px; */
+}
+
+.add-btn-group input {
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #c7c7c7;
+    line-height: 1.2rem;
+    font-size: 1rem;
+    margin: 15px 0;
+    color: #6c6e75;
+    margin: 15px 10px 15px 0;
+    width: 100%;
+    transition: all 100ms ease-out;
+}
+
+.add-btn-group input:focus {
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+    border-bottom: 2px solid #4f5567;
+    transition: all 100ms ease-in;
+}
+
+.add-btn-group {
+    height: 0;
+    transform: translateY(52px);
+    opacity: 0;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+}
+
+.add-btn-group.active {
+    height: 52px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 200ms ease-in-out;
+}
+
+.status-label {
+    font-size: 16px;
+    font-weight: 300;
+    color:#169cf1;
+}
+
+.status-label.alert {
+    color: #db3131;
+    font-weight: 500;
+}
+
+.status-label.success {
+    color: #35bb30;
+    font-weight: 500;
+}
+
+.input-group {
+    width: 80%;
+    display: flex;
+}
+.input-group button {
+    position: relative;
+    right: 30px;
+    opacity: 0;
+    margin: 15px 0;
+    color: #b0b0b0;
+    height: 23px;
+    border: 0;
+    transform: scale(0.3, 0.3);
+    transform: skew(245deg, 245deg);
+    transition: all 300ms ease;
+    background: none;
+}
+
+.input-group input:focus ~ button {
+    opacity: 1;
+    transform: scale(1, 1);
+    transition: all 300ms ease;
+}
+
+.folding-icon {
+    transform: rotate(0.25turn);
+    pointer-events : none;
+}
+
+.item-buttons button span {
+    pointer-events : none;
+}
+
+.item-buttons-additional {
+    width: 0px;
+    opacity: 0;
+    overflow: hidden;
+    max-height: 51px;
+    transition: all 300ms cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.item-buttons-additional.open {
+    opacity: 1;
+    width: 140px;
+    transition: all 300ms cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.currency-btns {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.new-line-currency {
+    margin: 0 3px;
+    border: 0;
+    padding: 11px 20px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.new-line-currency:focus {
+    outline: 0;
+}
+
+.new-line-currency.selected {
+    background-color: #d8d8d8;
+    box-shadow: 2px 2px 3px silver;
+}
+
+
+.table-sum {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ###################################################### */
+/* ########     HEADER SETTINGS     ##################### */
+.settings-modal {
+    background-color: #ece6e6;
+    width: 80vw;
+    height: 50vh;
+    margin: 20vh auto 20vh;
+    max-width: 500px;
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #525252;
+}
+
+
+
+
+
+
+
+/* ###################################################### */
+/* ########     SETTINGS     ##################### */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+
+
+/* ###################################################### */
+/* ########  Currency switcher (header) ##################### */
+.currency-button {
+    background: none;
+    cursor: pointer;
+    box-shadow: none;
+    border: 1px solid #b2b2b2;
+    color: #dfdfdf;
+    padding: 10px;
+    opacity: 0.3;
+}
+
+.currency-button.active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.currency-change .currency-switch {
+    margin: 0;
+}
