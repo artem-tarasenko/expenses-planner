@@ -5,10 +5,19 @@
         padding: 0;
         margin: 10px 0;
     }
+
+    p {
+        font-weight: 300;
+    }
+
+    .listGrid {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 3fr repeat(2, 1fr);
+    }
+
+    .gridTitles p {
+        font-weight: 500;
+    }
 }
 
-.listGrid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 2fr repeat(2, 1fr);
-}

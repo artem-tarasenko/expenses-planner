@@ -3,7 +3,7 @@ import {MdExpandLess, MdExpandMore} from 'react-icons/md';
 
 
 
-function TableHeading(props) {
+function ListsTotals(props) {
     const [isExpanded, setIsExpanded] = useState(false);
 
 
@@ -97,4 +97,4 @@ function TableHeading(props) {
             </div>
 }
 
-export default TableHeading;
+export default ListsTotals;
