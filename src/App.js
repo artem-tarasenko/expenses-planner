@@ -19,27 +19,26 @@ function App() {
 
   console.log("State Rates: ", rates);
 
-  useEffect( () =>  async () => {
-      const options = {
-          method: 'GET',
-          url: 'http://data.fixer.io/api/latest?access_key=644fe21408c7556ea0360b75c9bb7d3c&base=EUR&symbols=USD,CAD,RUB',
-        };
-      console.log("Fetching currency rates from API...");
-      try {
-          const rates = await axios.request(options);
-          console.log("RATES: ", rates.data);
-          setRates({
-              base: rates.data.base,
-              isReady: rates.data.success,
-              rates: rates.data.rates,
-          })
-      } catch(err) {
-          console.log(err);
-      }
+  useEffect(() => {fetchRates()}, [])
 
-      
-  }, [])
-
+  async function fetchRates() {
+    const options = {
+        method: 'GET',
+        url: 'http://data.fixer.io/api/latest?access_key=644fe21408c7556ea0360b75c9bb7d3c&base=EUR&symbols=USD,CAD,RUB',
+      };
+    console.log("Fetching currency rates from API...");
+    try {
+        const rates = await axios.request(options);
+        console.log("RATES: ", rates.data);
+        setRates({
+            base: rates.data.base,
+            isReady: rates.data.success,
+            rates: rates.data.rates,
+        })
+    } catch(err) {
+        console.log(err);
+    }
+  }
 
   const currency = {base: "EUR", rates: {CAD: 1.48, RUB: 91.1}};
   const rateCadRub = currency.rates.RUB / currency.rates.CAD;
