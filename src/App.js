@@ -84,6 +84,8 @@ function App() {
       console.error("API Request error", error);
     }
   }
+  
+  //Some new comment
 
 	useEffect(() => {fetchData()}, []);
   // useEffect(() => setSum({before: sumItems(list.before), after: sumItems(list.after)}), [list])
